@@ -46,9 +46,21 @@ function createGrid(gridSize) {
     gridDimension(grid, gridWidth, gridHeight, i);
     content.appendChild(grid);
   }
-  
+  let opacity = 0;
+  let opacity2 = 0;
   content.addEventListener('mouseover', (e) => {
-    e.target.style.backgroundColor = 'black';
+    if(e.target.getAttribute('data-opacity')){
+      opacity2 = parseFloat(e.target.getAttribute('data-opacity'));
+      opacity2 += 0.1;
+      e.target.setAttribute('data-opacity', opacity2);
+      console.log('opacity:' + opacity2)
+    } else {
+      e.target.setAttribute('data-opacity', opacity)
+    }
+    
+
+    console.log(e.target);
+    e.target.style.backgroundColor = randomRgba(opacity2);
   })
   
   
@@ -60,6 +72,16 @@ function gridDimension(grid, height, width, gridName) {
   grid.style.width = width;
 }
 
+function randomRgba(opacity) {
+  let r = Math.floor(Math.random() * 255);
+  let g = Math.floor(Math.random() * 255);
+  let b = Math.floor(Math.random() * 255);
+
+  return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+}
+
+
+// console.log(Math.floor(Math.random() * 255));
 // console.log(document.querySelectorAll('.grid'))
 
 

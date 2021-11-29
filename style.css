@@ -72,6 +72,7 @@ input {
   transition: all 0.06s;
   border: 2px solid #fff;
   box-shadow: 3px 3px 9px #333;
+  text-align: center;
 }
 
 input:hover {
