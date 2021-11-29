@@ -4,9 +4,28 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <title>Etch-a-Sketch</title>
 </head>
 <body>
-  
+  <h1>Etch-a-Sketch</h1>
+  <br>
+  <br>
+  <div class="container">
+    <div class="menu">
+      <button class="btn btn-clear">Clear</button>
+      <br><br>
+
+      <label for="gridSize">Gridsize: 16 to 100</label>
+      <input type="number" class="number" name="gridSize" id="gridSize" min="16" max="100">
+      <!-- <button class="btn-submit">submit</button> -->
+      <br><br>
+      <div class="gridSizeSelected"></div>
+      
+    </div>
+    <div class="content"></div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
